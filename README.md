@@ -7,5 +7,25 @@ Relational database schema design practice with tables, keys, constraints, and s
 - `sample-data.sql` — sample inserts
 - `queries.sql` — example queries (joins, aggregations)
 
-## How to use
-Run `schema.sql` first, then `sample-data.sql`, and optionally `queries.sql` in your SQL client.
+## Technologies
+- SQL
+- PostgreSQL
+- Docker (optional)
+
+## Run locally
+
+Start the PostgreSQL container:
+
+docker compose up -d
+
+Create the schema:
+
+docker exec -i db_schema_design psql -U admin -d testdb < schema.sql
+
+Insert sample data:
+
+docker exec -i db_schema_design psql -U admin -d testdb < sample-data.sql
+
+Run example queries:
+
+docker exec -i db_schema_design psql -U admin -d testdb < queries.sql
